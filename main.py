@@ -45,7 +45,8 @@ def main():
     '''
 
     frankenstein_contents = get_book_text("books/frankenstein.txt")
-
-    print(frankenstein_contents)
+    num_words = get_num_words(frankenstein_contents)
+    
+    print(f"{num_words} words found in the document")
 
 main()
