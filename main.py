@@ -1,3 +1,5 @@
+from stats import get_num_words
+
 def get_book_text(filepath):
     '''
     INPUTS
@@ -18,23 +20,7 @@ def get_book_text(filepath):
     return contents
 
 
-def get_num_words(text):
-    '''
-    INPUTS
-    ======
-    - text : string
-        A single string to be analysed.
 
-    OUTPUTS
-    =======
-    - num_words : int
-        The number of words contained in <text>, where words are distinguished by delimeter " ".
-    '''
-
-    split_string = text.split()
-    num_words = len(split_string)
-
-    return num_words
 
 def main():
     '''
@@ -46,7 +32,7 @@ def main():
 
     frankenstein_contents = get_book_text("books/frankenstein.txt")
     num_words = get_num_words(frankenstein_contents)
-    
+
     print(f"{num_words} words found in the document")
 
 main()
