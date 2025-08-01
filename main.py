@@ -18,4 +18,16 @@ def get_book_text(filepath):
     return contents
 
 
+def main():
+    '''
+    Read the text file "frankenstein" and print the full contents to the console
 
+    INPUTS : None
+    OUTPUTS : None
+    '''
+
+    frankenstein_contents = get_book_text("books/frankenstein.txt")
+
+    print(frankenstein_contents)
+
+main()
