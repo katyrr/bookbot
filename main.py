@@ -20,6 +20,42 @@ def get_book_text(filepath):
     return contents
 
 
+# A function that takes a dictionary and returns the value of the "num" key
+# This is how the `.sort()` method knows how to sort the list of dictionaries
+def configure_sort_criterion(keyname):
+    '''
+    INPUTS
+    ======
+    
+    - keyname : string
+        The name of the dict key to use for sorting.
+    
+    OUTPUTS
+    =======
+    - sort_criterion(items)
+        A function that can be passed to dict.sort(key=sort_criterion).
+        In that function, it is called on each item before the sort is performed,
+        resulting in the dict being sorted in order of <keyname>.
+
+    '''
+
+    def sort_criterion(items):
+        '''
+        INPUTS
+        ======
+        - items : dict
+            The dictionary to be sorted.
+
+        OUTPUTS
+        =======
+        - The value of the key which will be used to sort the dict.
+
+        '''
+        print(items[keyname])
+        return items[keyname]
+    
+    return sort_criterion
+
 
 
 def main():
@@ -37,4 +73,4 @@ def main():
     print(f"{num_words} words found in the document")
     print(char_freqs)
 
-main()
+#main()
