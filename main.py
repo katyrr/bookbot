@@ -1,4 +1,5 @@
 from stats import *
+import sys
 
 def get_book_text(filepath):
     '''
@@ -65,7 +66,14 @@ def main():
     OUTPUTS : None
     '''
 
-    loc = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("error: wrong number of arguments passed.")
+        print("correct usage: python3 main.py <path_to_text>.")
+    
+        sys.exit(1)
+
+    loc = sys.argv[1]
+
     text = get_book_text(loc)
     num_words = get_num_words(text)
     char_freqs = get_freqs(text)
