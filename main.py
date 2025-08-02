@@ -51,7 +51,6 @@ def configure_sort_criterion(keyname):
         - The value of the key which will be used to sort the dict.
 
         '''
-        print(items[keyname])
         return items[keyname]
     
     return sort_criterion
