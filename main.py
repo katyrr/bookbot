@@ -67,8 +67,8 @@ def main():
     '''
 
     if len(sys.argv) != 2:
-        print("error: wrong number of arguments passed.")
-        print("correct usage: python3 main.py <path_to_text>.")
+        print("Error: wrong number of arguments passed.")
+        print("Correct Usage: python3 main.py <path_to_book>.")
     
         sys.exit(1)
 
