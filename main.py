@@ -66,11 +66,22 @@ def main():
     OUTPUTS : None
     '''
 
-    text = get_book_text("books/frankenstein.txt")
+    loc = "books/frankenstein.txt"
+    text = get_book_text(loc)
     num_words = get_num_words(text)
     char_freqs = get_freqs(text)
 
-    print(f"{num_words} words found in the document")
-    print(char_freqs)
+    list_freqs = dict_to_list(char_freqs)
+    sort_crit = configure_sort_criterion("val")
+    list_freqs.sort(reverse=True, key=sort_crit)
+    
+    print(f"============ BOOKBOT ============\nAnalyzing book found at {loc}...")
+    print(f"----------- Word Count ----------\nFound {num_words} total words")
+    print(f"--------- Character Count -------")
 
-#main()
+    for i in list_freqs:
+        if i["key"].isalpha():
+            print(f"{i["key"]}: {i["val"]}")
+    
+
+main()
