@@ -1,4 +1,4 @@
-from stats import get_num_words
+from stats import *
 
 def get_book_text(filepath):
     '''
@@ -30,9 +30,11 @@ def main():
     OUTPUTS : None
     '''
 
-    frankenstein_contents = get_book_text("books/frankenstein.txt")
-    num_words = get_num_words(frankenstein_contents)
+    text = get_book_text("books/frankenstein.txt")
+    num_words = get_num_words(text)
+    char_freqs = get_freqs(text)
 
     print(f"{num_words} words found in the document")
+    print(char_freqs)
 
 main()
